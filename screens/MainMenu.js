@@ -1,17 +1,17 @@
 import React from "react";
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Header from "../components/Header";
+import ContainerMenu from "../components/menu/ContainerMenu";
 
 function MainMenu() {
     return (
         <View style={styles.main}>
+            <Header />
             <View>
                 <View style={styles.flagRed}></View>
                 <View style={styles.flagWhite}></View>
             </View>
-            <Text style={styles.textTitle}>Nama Nama Pahlawan Indonesia</Text>
-            <View>
-
-            </View>
+            <ContainerMenu />
         </View>
     )
 }
@@ -24,18 +24,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#A6D1E6"
     },
     flagRed: {
-        height: 100,
-        backgroundColor: "red"
+        height: 50,
+        backgroundColor: "red",
+        zIndex: 0
     },
     flagWhite: {
-        height: 100,
-        backgroundColor: "white"
+        height: 50,
+        backgroundColor: "white",
+        zIndex: 0
     },
-    textTitle: {
-        marginVertical: "30%",
-        alignSelf: "center",
-        fontSize: 30,
-        textAlign: "center",
-        fontWeight: "bold"
-    }
 })
