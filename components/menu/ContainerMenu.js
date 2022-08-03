@@ -1,16 +1,69 @@
-import { StyleSheet, Text, View } from "react-native"
+import { useState } from "react";
+import { BackHandler, StyleSheet, Text, View } from "react-native"
+import AwesomeAlert from "react-native-awesome-alerts";
 import ButtonMain from "./ButtonMain"
 
-function ContainerMenu() {
+function ContainerMenu({ navigation }) {
+    const [showAlert, setShowAlert] = useState(false)
+
+    function btnShowAlert() {
+        setShowAlert(true)
+    }
+
+    function hideAlert() {
+        setShowAlert(false)
+    }
+
+    function exit() {
+        BackHandler.exitApp()
+    }
+
     return (
         <View>
             <Text style={styles.textTitle}>Nama-Nama Pahlawan Sulawesi Barat</Text>
             <View style={styles.container}>
-                <ButtonMain title={"Mulai"} />
-                <ButtonMain title={"Petunjuk"} />
-                <ButtonMain title={"Tentang"} />
-                <ButtonMain title={"Keluar"} />
+                <ButtonMain
+                    screenName="ListHeroes"
+                    navigation={navigation}
+                    title={"Mulai"}
+                />
+                <ButtonMain
+                    screenName="Help"
+                    navigation={navigation}
+                    title={"Petunjuk"}
+                />
+                <ButtonMain
+                    screenName="About"
+                    navigation={navigation}
+                    title={"Tentang"}
+                />
+                <ButtonMain
+                    screenName="Exit"
+                    navigation={navigation}
+                    title={"Keluar"}
+                    btnShowAlert={btnShowAlert}
+                />
             </View>
+
+            <AwesomeAlert
+                show={showAlert}
+                showProgress={false}
+                // title="AwesomeAlert"
+                message="Anda yakin ingin keluar?"
+                closeOnTouchOutside={false}
+                closeOnHardwareBackPress={false}
+                showCancelButton={true}
+                showConfirmButton={true}
+                cancelText="No"
+                confirmText="Yes"
+                confirmButtonColor="#DD6B55"
+                onCancelPressed={() => {
+                    hideAlert();
+                }}
+                onConfirmPressed={() => {
+                    exit();
+                }}
+            />
         </View>
     )
 }

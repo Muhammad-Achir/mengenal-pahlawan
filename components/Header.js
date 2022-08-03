@@ -1,11 +1,17 @@
-import { Image, StyleSheet } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 
 function Header() {
     return (
-        <Image
-            style={styles.heroAnim}
-            source={require('../assets/hero-anim.png')}
-        />
+        <View>
+            <Image
+                style={styles.heroAnim}
+                source={require('../assets/hero-anim.png')}
+            />
+            <View>
+                <View style={styles.flagRed}></View>
+                <View style={styles.flagWhite}></View>
+            </View>
+        </View>
     )
 }
 
@@ -19,5 +25,15 @@ const styles = StyleSheet.create({
         width: 90,
         position: "absolute",
         zIndex: 1
+    },
+    flagRed: {
+        height: 50,
+        backgroundColor: "red",
+        zIndex: 0
+    },
+    flagWhite: {
+        height: 50,
+        backgroundColor: "white",
+        zIndex: 0
     },
 })

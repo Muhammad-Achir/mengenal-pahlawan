@@ -1,9 +1,23 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native"
+import { BackHandler, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 function ButtonMain(props) {
+    let screenName = props.screenName
+    let navigation = props.navigation
     let title = props.title
+
+    function goTo() {
+        if (title == "Keluar") {
+            props.btnShowAlert()
+        } else {
+            navigation.navigate(screenName)
+        }
+    }
+
     return (
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={goTo}
+        >
             <Text style={styles.text}>{title}</Text>
         </TouchableOpacity>
     )

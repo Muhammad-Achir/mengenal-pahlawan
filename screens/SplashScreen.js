@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 function SplashScreen({ navigation }) {
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate('Main Menu')
+            navigation.navigate('MainMenu')
         }, 2000)
     }, [])
 
