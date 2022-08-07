@@ -29,6 +29,24 @@ function Hero({ item }) {
         case "maemunah.jpg":
             imageResult = require('../../assets/maemunah.jpg')
             break;
+        case "depu.jpg":
+            imageResult = require('../../assets/depu.jpg')
+            break;
+        case "abdurrachman.jpg":
+            imageResult = require('../../assets/abdurrachman.jpg')
+            break;
+        case "djud.jpg":
+            imageResult = require('../../assets/djud.jpg')
+            break;
+        case "riri.png":
+            imageResult = require('../../assets/riri.png')
+            break;
+        case "lopa.jpg":
+            imageResult = require('../../assets/lopa.jpg')
+            break;
+        case "tonra.jpg":
+            imageResult = require('../../assets/tonra.jpg')
+            break;
 
         default:
             break;

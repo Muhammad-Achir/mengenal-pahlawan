@@ -6,14 +6,6 @@ import Header from "../components/Header";
 function DetailHero({ route }) {
     const data = route.params
 
-    const bio = [
-        ["Nama", ": " + data.name],
-        ["Tempat, Tanggal lahir", ": " + data.placeOfBirth + ", " + data.birth],
-        ["Pendidikan", ": " + data.education],
-        ["Profesi", ": " + data.profession],
-        ["Meninggal", ": " + data.rip]
-    ]
-
     let imageResult = require('../assets/empty.png')
 
     switch (data.picture) {
@@ -22,6 +14,24 @@ function DetailHero({ route }) {
             break;
         case "maemunah.jpg":
             imageResult = require('../assets/maemunah.jpg')
+            break;
+        case "depu.jpg":
+            imageResult = require('../assets/depu.jpg')
+            break;
+        case "abdurrachman.jpg":
+            imageResult = require('../assets/abdurrachman.jpg')
+            break;
+        case "djud.jpg":
+            imageResult = require('../assets/djud.jpg')
+            break;
+        case "riri.png":
+            imageResult = require('../assets/riri.png')
+            break;
+        case "lopa.jpg":
+            imageResult = require('../assets/lopa.jpg')
+            break;
+        case "tonra.jpg":
+            imageResult = require('../assets/tonra.jpg')
             break;
 
         default:
@@ -39,13 +49,29 @@ function DetailHero({ route }) {
                         source={imageResult}
                     />
                     <Text style={styles.title}>Biodata Pahlawan</Text>
-                    <Text>{data.picture}</Text>
-                    <Table style={styles.bio}>
-                        <Rows
-                            data={bio}
-                            textStyle={styles.bioRow}
-                        />
-                    </Table>
+                    <View style={styles.list}>
+                        <Text style={styles.textNumber}>Nama</Text>
+                        <Text style={styles.textList}>: {data.name}</Text>
+                    </View>
+                    <View style={styles.list}>
+                        <Text style={styles.textNumber}>TTL</Text>
+                        <Text style={styles.textList}>: {data.placeOfBirth}, {data.birth}</Text>
+                    </View>
+                    <View style={styles.list}>
+                        <Text style={styles.textNumber}>Pendidikan</Text>
+                        <Text style={styles.textList}>: {data.education}</Text>
+                    </View>
+                    <View style={styles.list}>
+                        <Text style={styles.textNumber}>Profesi</Text>
+                        <Text style={styles.textList}>: {data.profession}</Text>
+                    </View>
+                    <View style={styles.list}>
+                        <Text style={styles.textNumber}>Wafat</Text>
+                        <Text style={styles.textList}>: {data.rip}</Text>
+                    </View>
+                    <View style={styles.list}>
+                        <Text style={styles.textNumber}>Sejarah:</Text>
+                    </View>
                     <Text style={styles.textHistory}>{data.history}</Text>
                 </View>
             </ScrollView>
@@ -77,11 +103,18 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 25
     },
-    bio: {
-        marginHorizontal: 20
+    list: {
+        flexDirection: "row",
+        marginLeft: "7%",
+        marginBottom: 5,
     },
-    bioRow: {
-        marginVertical: 5,
+    textNumber: {
+        width: "30%"
+    },
+    textList: {
+        flex: 1,
+        paddingLeft: 5,
+        textAlign: "justify"
     },
     textHistory: {
         marginHorizontal: 10,
