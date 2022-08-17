@@ -83,6 +83,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "space-evenly",
-        top: "-20%"
+        top: "-35%"
     },
 })

@@ -1,11 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 function Help() {
     return (
         <View>
             <Header />
+            <Footer />
             <Text style={styles.title}>Petunjuk Penggunaan Aplikasi</Text>
             <View style={styles.list}>
                 <Text style={styles.textNumber}>1.</Text>

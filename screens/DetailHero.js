@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet, View, Text, ScrollView, SafeAreaView, Image } from "react-native";
 import { Cell, Row, Rows, Table } from "react-native-table-component";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 function DetailHero({ route }) {

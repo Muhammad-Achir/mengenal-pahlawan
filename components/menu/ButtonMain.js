@@ -27,7 +27,7 @@ export default ButtonMain
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        backgroundColor: "#003865",
+        backgroundColor: "#800000",
         width: "40%",
         margin: 14,
         padding: 18,

@@ -1,5 +1,6 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/List-Heroes/Hero'
 

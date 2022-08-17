@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 function About() {
