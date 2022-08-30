@@ -12,11 +12,11 @@ const Stack = createStackNavigator()
 function Router() {
     return (
         <Stack.Navigator>
-            <Stack.Screen
+            {/* <Stack.Screen
                 name="SplashScreen"
                 component={SplashScreen}
                 options={{ headerShown: false }}
-            />
+            /> */}
             <Stack.Screen
                 name="MainMenu"
                 component={MainMenu}
